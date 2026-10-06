@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>5th Grade Calendar</title>
+  <style>
+    html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+    iframe { border: 0; width: 100%; height: 100%; display: block; }
+  </style>
+</head>
+<body>
+  <iframe id="show" allowfullscreen></iframe>
+  <script>
+    const url = "https://docs.google.com/presentation/d/e/2PACX-1vQgTgfsRlKjFAbH8X1P6J2Lr2TK72OLTvp4MpbI11uppdLsN-_fwXqM8aOF_hUrSL8_KTqRx4pN8Zt8/embed?start=true&loop=true&delayms=10000";
+    const REFRESH_MINUTES = 5;
+
+    function load() {
+      document.getElementById("show").src = url + "&_=" + Date.now();
+    }
+
+    load();
+    setInterval(load, REFRESH_MINUTES * 60 * 1000);
+  </script>
+</body>
+</html>
